@@ -1,0 +1,60 @@
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.canvas {
+  flex: 8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.miniboard {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.toolBox {
+  display: flex;
+  flex: 2;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.localplot-container {
+  flex: 10;
+  height: 100%;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.neighborplotcontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.plotlabel {
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.neighborplot {
+  display: flex;
+  justify-content: center;
+  padding-top: 3%;
+}
+
+.wordInformation {
+  font-size: 10px;
+}
+
+.displayInformation {
+  font-size: 15px;
+  font-weight: bold;
+}
