@@ -38,9 +38,9 @@ const Histogram = ({dataset, models, parameters, comparison, setComparison, dist
         })
     
         // set the dimensions and margins of the graph
-        let widthBaseVal, heightBaseVal=130;
+        let widthBaseVal, heightBaseVal=150;
         spaceSaver ? (widthBaseVal = heightBaseVal + 10) : widthBaseVal = heightBaseVal = 180
-        const margin = {top: 20, right: 20, bottom: 20, left: 10},
+        const margin = {top: 20, right: 20, bottom: 20, left: 30},
             width = widthBaseVal - margin.left - margin.right,
             height = heightBaseVal - margin.top - margin.bottom;
     
@@ -77,6 +77,10 @@ const Histogram = ({dataset, models, parameters, comparison, setComparison, dist
         // set max y-value to be at least 1
         const y_max = Math.max(1, d3.max(bins, function(d) { return d.length; }));
         y.domain([0, y_max]);
+        svg.append("g")
+        .call(d3.axisLeft(y).tickFormat(function(d,i){
+            return d.toString().length > 3 ? ((d/1000).toString() + 'k') : d.toString()
+        }));
     
         // append the bar rectangles to the svg element
         svg.selectAll("rect")
